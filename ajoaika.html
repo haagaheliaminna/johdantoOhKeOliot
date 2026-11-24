@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ajoaika</title>
+</head>
+
+<body>
+	<h3>Ajoaika</h3>
+
+	<form>
+		<label>Ajoaika minuutteina: </label>
+		<input type="text" id="minuutit" size="4">
+		<input type="button" id="painike" value="Muunna" onClick="muunnaMinuutit()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		function muunnaMinuutit() {
+			//lue käyttäjän syöttämät minuutit
+			let minuutit = Number(document.getElementById("minuutit").value);
+			/* 	*
+			 * Tehtävänä on laskea matkaan käytetty aika tunteina ja minuutteina sekä pyöristettynä lähimpään tuntiin ylöspäin, kun matkaan käytetty aika on minuutteina. Tee ohjelma, joka kertoo oikeat vastaukset.
+			 * */
+			//minuutit 183 --> tunneiksi 3
+			let tunnit = Math.floor(minuutit / 60);
+
+			let minuutti = minuutit % 60
+			let tunnitYlos = Math.ceil(minuutit / 60)
+			document.getElementById("vastaus").innerHTML = "Tunteja " + tunnit + " ja minuutteja " + minuutti + "<br>Pyöristettynä lähimpään tuntiin ylöspäin " + tunnitYlos
+
+
+		}
+	</script>
+</body>
+
+</html>

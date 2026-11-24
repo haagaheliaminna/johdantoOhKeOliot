@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Päiväsakko</title>
+<!-- 
+Tee ohjelma, joka laskee päiväsakon määrän.  Päiväsakon määrä on (nettotulot – 255)/60
+ -->
+</head>
+<body>
+	<h3>Päiväsakko</h3>
+
+	<form>
+		<label>Nettotulot:</label> 
+		<input type="text" id="nettotulot" size="5"> 
+		<input type="button" id="painike" value="Laske päiväsakko" onclick="laskePaivasakko()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+	
+	<script>
+	function laskePaivasakko() {
+		//Lue nettotulot
+		let tulot = Number(document.getElementById("nettotulot").value)
+    	
+		//Laske sakon suuruus eli 
+		// let sakko = (nettotulot-255)/60;
+		let sakko = (tulot-255)/60
+
+    	//	Kirjoita vastaus html-sivulle kahdella desimaalilla
+		document.getElementById("vastaus").innerHTML 
+		= "Päiväsakko on " + sakko.toFixed(2);
+	}	
+
+	</script>
+</body>
+</html>
